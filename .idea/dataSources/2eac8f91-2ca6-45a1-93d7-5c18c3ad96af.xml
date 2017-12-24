@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="db_test@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="db_test">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="cdcol"/>
+    <schema id="4" parent="1" name="db_ecommerce"/>
+    <schema id="5" parent="1" name="db_ecommerceclass"/>
+    <schema id="6" parent="1" name="db_myname"/>
+    <schema id="7" parent="1" name="db_myproject"/>
+    <schema id="8" parent="1" name="db_wordpress"/>
+    <schema id="9" parent="1" name="information_schema"/>
+    <schema id="10" parent="1" name="mysql"/>
+    <schema id="11" parent="1" name="performance_schema"/>
+    <schema id="12" parent="1" name="phpmyadmin"/>
+    <schema id="13" parent="1" name="samajikedb"/>
+    <schema id="14" parent="1" name="spring"/>
+    <schema id="15" parent="1" name="student"/>
+    <schema id="16" parent="1" name="test"/>
+    <schema id="17" parent="1" name="webauth"/>
+    <schema id="18" parent="1" name="db_answer"/>
+    <schema id="19" parent="1" name="db_answer3"/>
+    <schema id="20" parent="1" name="pdr"/>
+    <schema id="21" parent="1" name="db_moviesproject"/>
+    <table id="22" parent="2" name="authorities"/>
+    <table id="23" parent="2" name="billingaddress"/>
+    <table id="24" parent="2" name="cart"/>
+    <table id="25" parent="2" name="cartitem"/>
+    <table id="26" parent="2" name="customer"/>
+    <table id="27" parent="2" name="customerorder"/>
+    <table id="28" parent="2" name="product"/>
+    <table id="29" parent="2" name="shippingaddress"/>
+    <table id="30" parent="2" name="users"/>
+    <column id="31" parent="22" name="authoritiesId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="22" name="authority">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="33" parent="22" name="username">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="34" parent="22" name="PRIMARY">
+      <ColNames>authoritiesId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="35" parent="23" name="billingAddressId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="23" name="apartmentNumber">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="37" parent="23" name="city">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="38" parent="23" name="country">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="39" parent="23" name="state">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="40" parent="23" name="streetName">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="41" parent="23" name="zipCode">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="42" parent="23" name="customer_customerId">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="43" parent="23" name="FKF0492D19AA2733B7">
+      <ColNames>customer_customerId</ColNames>
+    </index>
+    <key id="44" parent="23" name="PRIMARY">
+      <ColNames>billingAddressId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="45" parent="23" name="FKF0492D19AA2733B7">
+      <ColNames>customer_customerId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>customerId</RefColNames>
+    </foreign-key>
+    <column id="46" parent="24" name="cartId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="24" name="grandTotal">
+      <Position>2</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="24" name="customerId">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="49" parent="24" name="FK1FEF40EEF254B6">
+      <ColNames>customerId</ColNames>
+    </index>
+    <key id="50" parent="24" name="PRIMARY">
+      <ColNames>cartId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="51" parent="24" name="FK1FEF40EEF254B6">
+      <ColNames>customerId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>customerId</RefColNames>
+    </foreign-key>
+    <column id="52" parent="25" name="cartItemId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="53" parent="25" name="quantity">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="25" name="totalPrice">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="25" name="cartId">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="56" parent="25" name="productId">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="57" parent="25" name="FK4393E734D1677FA">
+      <ColNames>productId</ColNames>
+    </index>
+    <index id="58" parent="25" name="FK4393E73504B0A3A">
+      <ColNames>cartId</ColNames>
+    </index>
+    <key id="59" parent="25" name="PRIMARY">
+      <ColNames>cartItemId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="60" parent="25" name="FK4393E73504B0A3A">
+      <ColNames>cartId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>cart</RefTableName>
+      <RefColNames>cartId</RefColNames>
+    </foreign-key>
+    <foreign-key id="61" parent="25" name="FK4393E734D1677FA">
+      <ColNames>productId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>product</RefTableName>
+      <RefColNames>productId</RefColNames>
+    </foreign-key>
+    <column id="62" parent="26" name="customerId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="63" parent="26" name="customerEmail">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="26" name="customerName">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="26" name="customerPhone">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="66" parent="26" name="enabled">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="26" name="password">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="26" name="username">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="26" name="billingAddressId">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="70" parent="26" name="cartId">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="71" parent="26" name="shippingAddressId">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="72" parent="26" name="FK27FBE3FE504B0A3A">
+      <ColNames>cartId</ColNames>
+    </index>
+    <index id="73" parent="26" name="FK27FBE3FE64CCD90C">
+      <ColNames>billingAddressId</ColNames>
+    </index>
+    <index id="74" parent="26" name="FK27FBE3FEBA5A5848">
+      <ColNames>shippingAddressId</ColNames>
+    </index>
+    <key id="75" parent="26" name="PRIMARY">
+      <ColNames>customerId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="76" parent="26" name="FK27FBE3FE64CCD90C">
+      <ColNames>billingAddressId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>billingaddress</RefTableName>
+      <RefColNames>billingAddressId</RefColNames>
+    </foreign-key>
+    <foreign-key id="77" parent="26" name="FK27FBE3FE504B0A3A">
+      <ColNames>cartId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>cart</RefTableName>
+      <RefColNames>cartId</RefColNames>
+    </foreign-key>
+    <foreign-key id="78" parent="26" name="FK27FBE3FEBA5A5848">
+      <ColNames>shippingAddressId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>shippingaddress</RefTableName>
+      <RefColNames>billingAddressId</RefColNames>
+    </foreign-key>
+    <column id="79" parent="27" name="customerOrderId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="80" parent="27" name="billingAddressId">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="81" parent="27" name="cartId">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="82" parent="27" name="customerId">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="83" parent="27" name="shippingAddressId">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="84" parent="27" name="FKAEF781F0504B0A3A">
+      <ColNames>cartId</ColNames>
+    </index>
+    <index id="85" parent="27" name="FKAEF781F064CCD90C">
+      <ColNames>billingAddressId</ColNames>
+    </index>
+    <index id="86" parent="27" name="FKAEF781F0BA5A5848">
+      <ColNames>shippingAddressId</ColNames>
+    </index>
+    <index id="87" parent="27" name="FKAEF781F0EEF254B6">
+      <ColNames>customerId</ColNames>
+    </index>
+    <key id="88" parent="27" name="PRIMARY">
+      <ColNames>customerOrderId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="89" parent="27" name="FKAEF781F064CCD90C">
+      <ColNames>billingAddressId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>billingaddress</RefTableName>
+      <RefColNames>billingAddressId</RefColNames>
+    </foreign-key>
+    <foreign-key id="90" parent="27" name="FKAEF781F0504B0A3A">
+      <ColNames>cartId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>cart</RefTableName>
+      <RefColNames>cartId</RefColNames>
+    </foreign-key>
+    <foreign-key id="91" parent="27" name="FKAEF781F0EEF254B6">
+      <ColNames>customerId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>customerId</RefColNames>
+    </foreign-key>
+    <foreign-key id="92" parent="27" name="FKAEF781F0BA5A5848">
+      <ColNames>shippingAddressId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>shippingaddress</RefTableName>
+      <RefColNames>billingAddressId</RefColNames>
+    </foreign-key>
+    <column id="93" parent="28" name="productId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="94" parent="28" name="productCategory">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="95" parent="28" name="productCondition">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="96" parent="28" name="productDescription">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="97" parent="28" name="productManufacturer">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="98" parent="28" name="productName">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="99" parent="28" name="productPrice">
+      <Position>7</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="28" name="productStatus">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="101" parent="28" name="unitInStock">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="102" parent="28" name="PRIMARY">
+      <ColNames>productId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="103" parent="29" name="billingAddressId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="104" parent="29" name="apartmentNumber">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="105" parent="29" name="city">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="106" parent="29" name="country">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="107" parent="29" name="state">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="108" parent="29" name="streetName">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="109" parent="29" name="zipCode">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="110" parent="29" name="customer_customerId">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="111" parent="29" name="FKBB1EE46AA2733B7">
+      <ColNames>customer_customerId</ColNames>
+    </index>
+    <key id="112" parent="29" name="PRIMARY">
+      <ColNames>billingAddressId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="113" parent="29" name="FKBB1EE46AA2733B7">
+      <ColNames>customer_customerId</ColNames>
+      <RefSchemaName>db_test</RefSchemaName>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>customerId</RefColNames>
+    </foreign-key>
+    <column id="114" parent="30" name="userId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="115" parent="30" name="customerId">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="116" parent="30" name="enabled">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="117" parent="30" name="password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="118" parent="30" name="username">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="119" parent="30" name="PRIMARY">
+      <ColNames>userId</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
